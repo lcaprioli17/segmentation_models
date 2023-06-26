@@ -58,10 +58,10 @@ def Conv2dBn(
             name=conv_name,
         )(input_tensor)
 
-        if filters < 128:
-            x = layers.Dropout(0.3)(x)
-        else:
-            x = layers.Dropout(0.5)(x)
+        # if filters < 128:
+        #     x = layers.Dropout(0.3)(x)
+        # else:
+        #     x = layers.Dropout(0.5)(x)
 
         if use_batchnorm:
             x = layers.BatchNormalization(axis=bn_axis, name=bn_name)(x)
