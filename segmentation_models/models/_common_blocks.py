@@ -58,14 +58,13 @@ def Conv2dBn(
             name=conv_name,
         )(input_tensor)
 
-        x = layers.Dropout(0.3)(x)
-
-
         if use_batchnorm:
             x = layers.BatchNormalization(axis=bn_axis, name=bn_name)(x)
 
         if activation:
             x = layers.Activation(activation, name=act_name)(x)
+
+        x = layers.Dropout(0.3)(x)
 
         return x
 
