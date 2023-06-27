@@ -119,7 +119,7 @@ def build_unet(
     input_ = backbone.input
     x = backbone.output
     #############################################################################################################
-    x = layers.Dropout(0.5)(x) #added by me
+    # x = layers.Dropout(0.5)(x) #added by me
     #############################################################################################################
     # extract skip connections
     skips = ([backbone.get_layer(name=i).output if isinstance(i, str)
