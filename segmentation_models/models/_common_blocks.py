@@ -63,9 +63,9 @@ def Conv2dBn(
 
         if activation:
             x = layers.Activation(activation, name=act_name)(x)
-
-        x = layers.Dropout(0.3)(x)
-
+        #################################################################################
+        x = layers.Dropout(0.3)(x) # added by me
+        #################################################################################
         return x
 
     return wrapper
